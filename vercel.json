@@ -6,7 +6,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'self' https://cancercarebaskets.org https://*.cancercarebaskets.org https://*.vercel.app"
+          "value": "frame-ancestors 'self' https://cancercarebaskets.org https://*.cancercarebaskets.org https://*.netlify.app https://*.vercel.app"
         }
       ]
     }
