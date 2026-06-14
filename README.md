@@ -7,6 +7,10 @@ Comprehensive Cancer Center in South Florida.
 
 > **Comfort & hope, one basket at a time.**
 
+**[🔗 Live dashboard](https://ccb-survey-dashboard.vercel.app)** · embedded on
+**[cancercarebaskets.org](https://cancercarebaskets.org/#impact)**, where it updates
+automatically as new survey responses arrive.
+
 The organization has always been data-informed — surveying patients and adjusting basket
 contents based on what they actually find helpful. This dashboard makes that loop live:
 responses flow in through Google Forms, and the charts update automatically, so the next
@@ -126,7 +130,7 @@ The dashboard renders a chrome-free, transparent, auto-resizing view at `/?embed
 to be dropped into cancercarebaskets.org:
 
 ```html
-<iframe id="ccb-dashboard" src="https://YOUR-DASHBOARD.vercel.app/?embed=1"
+<iframe id="ccb-dashboard" src="https://ccb-survey-dashboard.vercel.app/?embed=1"
         title="Cancer Care Baskets — live survey results"
         style="width:100%;border:0;display:block;min-height:1200px" loading="lazy"></iframe>
 <script>
@@ -139,8 +143,9 @@ to be dropped into cancercarebaskets.org:
 </script>
 ```
 
-Framing is restricted to `cancercarebaskets.org` via a Content-Security-Policy header
-(`vercel.json`), so the dashboard can't be embedded by other sites.
+Framing is restricted via a Content-Security-Policy header (`vercel.json`) to the
+`cancercarebaskets.org`, Netlify, and Vercel domains, so the dashboard can't be embedded
+by arbitrary third-party sites.
 
 ## Scripts
 
