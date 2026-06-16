@@ -11,6 +11,9 @@ Comprehensive Cancer Center in South Florida.
 **[cancercarebaskets.org](https://cancercarebaskets.org/#impact)**, where it updates
 automatically as new survey responses arrive.
 
+<img width="1512" height="860" alt="image" src="https://github.com/user-attachments/assets/8067227f-032f-4668-996f-96bd7ef14ab8" />
+
+
 The organization has always been data-informed — surveying patients and adjusting basket
 contents based on what they actually find helpful. This dashboard makes that loop live:
 responses flow in through Google Forms, and the charts update automatically, so the next
