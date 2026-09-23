@@ -6,6 +6,7 @@
 const startOfMonth = (d) => new Date(d.getFullYear(), d.getMonth(), 1)
 const monthKey = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
 const monthLabel = (d) => d.toLocaleString('en-US', { month: 'short', year: '2-digit' })
+const monthLabelLong = (d) => d.toLocaleString('en-US', { month: 'long', year: 'numeric' })
 
 /** Min/max submission date across records (ignores missing). */
 export function dateExtent(records) {
@@ -14,7 +15,7 @@ export function dateExtent(records) {
   return { min: new Date(Math.min(...times)), max: new Date(Math.max(...times)) }
 }
 
-/** Responses per month -> [{ key, label, date, count }], gap-filled. */
+/** Responses per month -> [{ key, label, fullLabel, date, count }], gap-filled. */
 export function responsesOverTime(records) {
   const dated = records.map((r) => r.timestamp).filter(Boolean).sort((a, b) => a - b)
   if (!dated.length) return []
@@ -28,7 +29,8 @@ export function responsesOverTime(records) {
   while (cursor <= last) {
     out.push({
       key: monthKey(cursor),
-      label: monthLabel(cursor),
+      label: monthLabel(cursor), // "May 26": compact, for chart axes
+      fullLabel: monthLabelLong(cursor), // "May 2026": for prose and stat cards
       date: new Date(cursor),
       count: counts.get(monthKey(cursor)) || 0,
     })

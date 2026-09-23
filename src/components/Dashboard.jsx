@@ -23,7 +23,7 @@ export default function Dashboard({ records }) {
       {/* KPI row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <StatCard label="Total responses" value={records.length} />
-        <StatCard label="Busiest month" value={peak.label} sub={`${peak.count} responses`} />
+        <StatCard label="Busiest month" value={peak.fullLabel || peak.label} sub={`${peak.count} responses`} />
         <StatCard
           label="Date range"
           value={extent.min ? `${extent.min.toLocaleString('en-US', { month: 'short', year: 'numeric' })} – Present` : '—'}
